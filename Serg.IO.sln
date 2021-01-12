@@ -1,0 +1,33 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serg.IO", "Serg.IO\Serg.IO.csproj", "{F1B82893-E6EF-4152-B99A-D22D81BE08CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1B82893-E6EF-4152-B99A-D22D81BE08CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B82893-E6EF-4152-B99A-D22D81BE08CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B82893-E6EF-4152-B99A-D22D81BE08CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B82893-E6EF-4152-B99A-D22D81BE08CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4070D723-F6FE-41C9-A5D9-FFAE080E436C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4070D723-F6FE-41C9-A5D9-FFAE080E436C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4070D723-F6FE-41C9-A5D9-FFAE080E436C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4070D723-F6FE-41C9-A5D9-FFAE080E436C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 1.0.0a
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+	EndGlobalSection
+EndGlobal
