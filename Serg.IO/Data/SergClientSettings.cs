@@ -10,13 +10,11 @@ namespace Serg.IO.Data
         /// </summary>
         public bool debug = false;
         /// <summary>
-        /// Indicates if the server is local network (Intranet) or external server
-        /// </summary>
-        public bool isLocal = true;
-        /// <summary>
         /// The ip connect.
         /// </summary>
         public string ipConnect;
+        public string url;
+        public int reconnectDelay;
         /// <summary>
         /// It is the port to which the client and server will connect
         /// </summary>

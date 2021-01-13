@@ -5,11 +5,11 @@ namespace Serg.IO {
     public enum TypeEvent
     {
         UNKNOW = -1,
-        CONNECT = 1,
-        MESSAGE = 2,
-        DISCONNECT = 3,
-        NEWCONNECTION = 4,
-        PING = 5,
-        PONG = 6
+        CONNECT = 0,
+        DISCONNECT = 1,
+        PING = 2,
+        PONG = 3,
+        MESSAGE = 4,
+        NEWCONNECTION = 7
     }
 }

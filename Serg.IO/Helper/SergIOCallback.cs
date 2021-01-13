@@ -14,9 +14,6 @@ namespace Serg.IO.Helper {
         /// Invokes the callback.
         /// </summary>
         /// <param name="data">Data.</param>
-        public void InvokeCallback(string data)
-        {
-            Callback?.Invoke(data);
-        }
+        public void InvokeCallback(string data) => Callback?.Invoke(data);
     }
 }

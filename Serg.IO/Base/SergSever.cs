@@ -32,19 +32,22 @@ namespace Serg.IO{
         byte[] rcvBuffer;
         byte[] sndBuffer;
 
+        public SergServer(){
+            rcvBuffer = new byte[maxBufferSize];
+            sndBuffer = new byte[maxBufferSize];
+            clients = new List<Socket>();
+            if (callbacks == null) callbacks = new Dictionary<string, SergIOCallbackData>();
+            LOG = LOG ?? new Action<string>((data) => {
+                if (settings.debug) Console.WriteLine(data);
+            });
+        }
+
         /// <summary>
         /// Starts the server async.
         /// </summary>
         public void StartServer()
         {
-            rcvBuffer = new byte[maxBufferSize];
-            sndBuffer = new byte[maxBufferSize];
-            clients = new List<Socket>();
             if (!IsServerRunning) IsServerRunning = true;
-            if (callbacks == null) callbacks = new Dictionary<string, SergIOCallbackData>();
-            LOG = LOG ?? new Action<string>((data) => {
-                if (settings.debug) Console.WriteLine(data);
-            });
             IpEndPoint = new IPEndPoint(IPAddress.Parse(Helper.Helper.MiIp()), settings.port);
             Connection = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Connection.Bind(IpEndPoint);
@@ -63,11 +66,9 @@ namespace Serg.IO{
                 Connection.BeginAccept(AcceptCallback, null);
                 LOG("New Client Connected");
                 accepted.BeginReceive(rcvBuffer, 0, maxBufferSize, SocketFlags.None, (ReceiveCallback), accepted);
+                EmitPackage(new SergIOPacket(TypeEvent.NEWCONNECTION));
             }
-            catch
-            {
-                return;
-            }
+            catch { return; }
         }
         void ReceiveCallback(IAsyncResult ar)
         {
